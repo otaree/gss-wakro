@@ -136,7 +136,7 @@ export default function MandatoryPublicDisclosure() {
                         </Tr>
                         <Tr>
                             <Td>School code</Td>
-                            <Td></Td>
+                            <Td>37078</Td>
                         </Tr>
                         <Tr>
                             <Td>Address</Td>
@@ -144,7 +144,7 @@ export default function MandatoryPublicDisclosure() {
                         </Tr>
                         <Tr>
                             <Td>Email</Td>
-                            <Td>ghsshawai.anjaw@gmail.com</Td>
+                            <Td>hmgsswakro@gmail.com</Td>
                         </Tr>
                         <Tr>
                             <Td>Mobile No.</Td>
@@ -170,7 +170,7 @@ export default function MandatoryPublicDisclosure() {
                         </Tr>
                         <Tr>
                             <Td>School code</Td>
-                            <Td></Td>
+                            <Td>37078</Td>
                         </Tr>
                         <Tr>
                             <Td>Address</Td>
