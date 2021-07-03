@@ -14,12 +14,13 @@ import {
 import { FaStarOfLife } from 'react-icons/fa';
 
 import LinksTable from '../LinksTable';
+import DetailsTable from '../DetailsTable';
 
-const CBSEUpgradationDoc = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/affiliation_application.pdf"
+const CBSEUpgradationDoc = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/affiliation-letter.pdf"
 const HealthSanitationDoc = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/water-health-sanitation-certificate.pdf";
 const BuildingSafetyDoc = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/building-safety-certificate.pdf";
-const FireSafetyDoc = "#";
-const DSEDoc = "#";
+const FireSafetyDoc = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/Fire-safety-cer.pdf";
+const DSEDoc = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/affiliation_application.pdf";
 const TrustsDoc = "#";
 const NOCDoc = "#";
 const RTEActDoc = "#";
@@ -31,73 +32,142 @@ const TransportSafetyCertificate = "https://ghss-wakro.s3.ap-south-1.amazonaws.c
 const ListOfTeachersAndStaffs = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/list-of-teaching-staff.pdf";
 const SMCDoc = "https://ghss-wakro.s3.ap-south-1.amazonaws.com/smc.pdf";
 
+const documentsInfosLinks = [
+    {
+        title: "Copies of Affiliation/Upgradation Letter",
+        link: CBSEUpgradationDoc
+    },
+    {
+        title: "Copies of Societies/Trust/Company Registration/Renewal Certificate",
+        link: TrustsDoc
+    },
+    {
+        title: "Copies of No Objection Certificate(NOC) issued",
+        link: NOCDoc
+    },
+    {
+        title: "Copies of recognition certificate under RTE Act, 2009, And it's renewal",
+        link: RTEActDoc
+    },
+    {
+        title: "Copy of Valid Building Safety Certificate as per the National Building Code",
+        link: BuildingSafetyDoc
+    },
+    {
+        title: "Copy of Valid Fire safety certificate issued by the competent authority",
+        link: FireSafetyDoc
+    },
+    {
+        title: "Copy of the DEO certificate submitted by the school for Affiliation/Upgradation/extension of the Affiliation or self certification by school",
+        link: DSEDoc
+    },
+    {
+        title: "Copies of valid water, health and sanitation certificates",
+        link: HealthSanitationDoc
+    },
+    {
+        title: "Copy of the Transport Safety Certificate",
+        link: TransportSafetyCertificate
+    },
+    {
+        title: "List of teachers and staffs",
+        link: ListOfTeachersAndStaffs
+    },
+];
+const resultAndAcademicsLinks = [
+    {
+        title: "Fee Structure of the school",
+        link: FeeStructureDoc
+    },
+    {
+        title: "Annual Academic Calender",
+        link: AcademicCalendarDoc
+    },
+    {
+        title: "List of School Management Committee(SMC)",
+        link: SMCDoc
+    },
+    {
+        title: "List of Parents Teachers Association (PTA) Members",
+        link: PTADoc
+    },
+    {
+        title: "Last Three-year result of the board Examination",
+        link: RESULTS
+    },
+];
+
+const staffDetails = [
+    {
+        title: "Principal",
+        value: "01"
+    },
+    {
+        title: "Total No. of Teachers",
+        value: "11"
+    },
+    {
+        title: "Total No. of Teachers(PGT)",
+        value: "00"
+    },
+    {
+        title: "Total No. of Teachers(TGT)",
+        value: "09"
+    },
+    {
+        title: "Total No. of Teachers(PRT)",
+        value: "01"
+    },
+    {
+        title: "Total No. of Teachers(PET)",
+        value: "01"
+    },
+    {
+        title: "Total Section Ratio",
+        value: "01:40"
+    },
+    {
+        title: "Details of Special Educator",
+        value: "00"
+    },
+    {
+        title: "Details of Counsellor and Wellness",
+        value: "02 (Swapna Dey and Mohmmad Ahmed)"
+    },
+];
+
+const schoolInfrastructureDetails = [
+    {
+        title: "Total Campus area of the school(in Square meter)",
+        value: "50000 sqm."
+    },
+    {
+        title: "No. and size of the class rooms(in sq. ft. mtr.)",
+        value: "1060 sqm."
+    },
+    {
+        title: "No. and size of laboratories including computer labs(in sq. ft. mtr.)",
+        value: "02 and 48 sqm."
+    },
+    {
+        title: "Internet Facility",
+        value: "No"
+    },
+    {
+        title: "No. of Girls toilet",
+        value: "02"
+    },
+    {
+        title: "No. of Boys toilet",
+        value: "02"
+    },
+    {
+        title: "Link of Youtube video of the inspection of the school covering the infrastructure of the school",
+        value: "_"
+    }
+];
+
 export default function MandatoryPublicDisclosure() {
-    const documentsInfosLinks = [
-        {
-            title: "Copies of Affiliation/Upgradation Letter",
-            link: CBSEUpgradationDoc
-        },
-        {
-            title: "Copies of Societies/Trust/Company Registration/Renewal Certificate",
-            link: TrustsDoc
-        },
-        {
-            title: "Copies of No Objection Certificate(NOC) issued",
-            link: NOCDoc
-        },
-        {
-            title: "Copies of recognition certificate under RTE Act, 2009, And it's renewal",
-            link: RTEActDoc
-        },
-        {
-            title: "Copy of Valid Building Safety Certificate as per the National Building Code",
-            link: BuildingSafetyDoc
-        },
-        {
-            title: "Copy of Valid Fire safety certificate issued by the competent authority",
-            link: FireSafetyDoc
-        },
-        {
-            title: "Copy of the DEO certificate submitted by the school for Affiliation/Upgradation/extension of the Affiliation or self certification by school",
-            link: DSEDoc
-        },
-        {
-            title: "Copies of valid water, health and sanitation certificates",
-            link: HealthSanitationDoc
-        },
-        {
-            title: "Copy of the Transport Safety Certificate",
-            link: TransportSafetyCertificate
-        },
-        {
-            title: "List of teachers and staffs",
-            link: ListOfTeachersAndStaffs
-        },
-    ];
-    const resultAndAcademicsLinks = [
-        {
-            title: "Fee Structure of the school",
-            link: FeeStructureDoc
-        },
-        {
-            title: "Annual Academic Calender",
-            link: AcademicCalendarDoc
-        },
-        {
-            title: "List of School Management Committee(SMC)",
-            link: SMCDoc
-        },
-        {
-            title: "List of Parents Teachers Association (PTA) Members",
-            link: PTADoc
-        },
-        {
-            title: "Last Three-year result of the board Examination",
-            link: RESULTS
-        },
-    ];
-
-
     return (
         <Box py={[4, 8]} px={[4, 16]}>
             <HStack mb={4}>
@@ -148,7 +218,7 @@ export default function MandatoryPublicDisclosure() {
                         </Tr>
                         <Tr>
                             <Td>Mobile No.</Td>
-                            <Td></Td>
+                            <Td>+918729966687</Td>
                         </Tr>
                     </Tbody>
                 </Table>
@@ -182,7 +252,7 @@ export default function MandatoryPublicDisclosure() {
                         </Tr>
                         <Tr>
                             <Td>Mobile No.</Td>
-                            <Td></Td>
+                            <Td>+918729966687</Td>
                         </Tr>
                     </Tbody>
                 </Table>
@@ -274,6 +344,19 @@ export default function MandatoryPublicDisclosure() {
                     <Text p={2} w="20vw" textAlign="center"></Text>
                 </HStack>
             </Box>
+
+            <Heading fontSize={["lg", "2xl"]}>
+                D. Staff(Teaching)
+            </Heading>
+            <DetailsTable 
+                values={staffDetails}
+            />
+            <Heading fontSize={["lg", "2xl"]}>
+                E. School Infrastructure
+            </Heading>
+            <DetailsTable
+                values={schoolInfrastructureDetails}
+            />
         </Box>
     )
 }

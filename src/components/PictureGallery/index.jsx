@@ -17,7 +17,16 @@ export default function PictureGallery() {
         {
             img: "https://ghss-wakro.s3.ap-south-1.amazonaws.com/prize-distribution.jpeg",
             title: "Prize Distribution"
-        }
+        },
+        {
+            img: "https://ghss-wakro.s3.ap-south-1.amazonaws.com/culture-event.jpeg",
+            title: "Student and teachers during culture event"
+        },
+        {
+            img: "https://ghss-wakro.s3.ap-south-1.amazonaws.com/indepandence-day.jpeg",
+            title: "Independence day"
+        },
+
     ]
     return (
         <>

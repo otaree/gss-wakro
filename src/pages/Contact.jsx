@@ -29,7 +29,7 @@ const PrincipalCard = () => (
                     as={FaPhoneAlt}
                     color="blue.400"
                 />
-                <Text></Text>
+                <Text>+918729966687</Text>
             </HStack>
             <HStack spacing={2}>
                 <Icon
@@ -44,25 +44,39 @@ const PrincipalCard = () => (
 
 const TeacherCard = ({ name, position, qualification, phone, email }) => (
     <Box borderRadius="md" shadow="md" overflow="hidden" p={4}>
-        <Text mt={2} color="gray.800" fontWeight="bold" textDecoration="underline">{name}</Text>
-        <Text color="gray.800" fontWeight="bold">{position}</Text>
+        <Text mt={2} color="gray.800" fontWeight="bold" textDecoration="underline" textAlign="center">{name}</Text>
+        <Text color="gray.800" fontWeight="bold" textAlign="center">{position}</Text>
         <Divider colorScheme="blue" size="md" />
-        <Text my={2} color="blue.600" fontWeight="semibold">{qualification}</Text>
+        <Text my={2} color="blue.600" fontWeight="semibold" textAlign="center">{qualification}</Text>
         <Divider colorScheme="blue" size="md" />
-        <HStack spacing={2}>
-            <Icon
-                as={FaPhoneAlt}
-                color="blue.400"
-            />
-            <Text>{phone}</Text>
-        </HStack>
-        <HStack spacing={2}>
-            <Icon
-                as={GrMail}
-                color="blue.400"
-            />
-            <Text>{email}</Text>
-        </HStack>
+        {
+            phone &&
+            (
+                <Center>
+                    <HStack spacing={2}>
+                        <Icon
+                            as={FaPhoneAlt}
+                            color="blue.400"
+                        />
+                        <Text>{phone}</Text>
+                    </HStack>
+                </Center>
+            )
+        }
+        {
+            email &&
+            (
+                <Center>
+                    <HStack spacing={2}>
+                        <Icon
+                            as={GrMail}
+                            color="blue.400"
+                        />
+                        <Text>{email}</Text>
+                    </HStack>
+                </Center>
+            )
+        }
     </Box>
 )
 
@@ -74,63 +88,63 @@ export default function Contact() {
             name: "Sri Mohammad Ahmed",
             position: "TGT",
             qualification: "M.Sc. (Maths)",
-            phone: "",
+            phone: "+919436679094",
             email: ""
         },
         {
             name: "Sri Ashok Kumar Srivastava",
             position: "TGT",
             qualification: "M.A.(Psychology & Hindi) B.Ed.",
-            phone: "",
+            phone: "+919436250893",
             email: ""
         },
         {
             name: "Smt. G.S. Mathew",
             position: "TGT",
             qualification: "B.Sc.,M.A. (Hindi) B.Ed",
-            phone: "",
+            phone: "+918132888890",
             email: ""
         },
         {
             name: "Sri Mathukutty Philip",
             position: "TGT",
             qualification: "B.A. B.T.",
-            phone: "",
+            phone: "+917005316547",
             email: ""
         },
         {
             name: "Smt. Swapna Dey",
             position: "TGT",
             qualification: "B.Sc B.Ed.",
-            phone: "",
+            phone: "+919436053529",
             email: ""
         },
         {
             name: "Sri Abramso Mam",
             position: "TGT",
             qualification: "B.Com D.L.Ed",
-            phone: "",
+            phone: "+918730948414",
             email: ""
         },
         {
             name: "Sri P.D. Washi",
             position: "TGT",
             qualification: "B.A. D.L.ed",
-            phone: "",
+            phone: "+918837096526",
             email: ""
         },
         {
             name: "Smt. Monika Washi",
             position: "TGT",
             qualification: "B.A. D.L.Ed",
-            phone: "",
+            phone: "+918131818157",
             email: ""
         },
         {
             name: "Sri Elisa Siram",
             position: "TGT",
             qualification: "M.A. (History) B.Ed",
-            phone: "",
+            phone: "+9184139318",
             email: ""
         },
         {
