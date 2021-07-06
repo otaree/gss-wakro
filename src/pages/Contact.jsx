@@ -144,21 +144,21 @@ export default function Contact() {
             name: "Sri Elisa Siram",
             position: "TGT",
             qualification: "M.A. (History) B.Ed",
-            phone: "+9184139318",
+            phone: "+918413931888",
             email: ""
         },
         {
             name: "Sri Mangal Chandra Mitra",
             position: "TGT",
             qualification: "B.Com. B.P.Ed",
-            phone: "",
+            phone: "+919436633626",
             email: ""
         },
         {
             name: "Smt. Bakhemlu Tindia",
             position: "PRT",
             qualification: "B. A",
-            phone: "",
+            phone: "+918731092837",
             email: ""
         },
     ]
