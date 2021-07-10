@@ -5,8 +5,12 @@ import {
     Tbody,
     Tr,
     Th,
-    Td
+    Td,
+    Link,
+    Button
 } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { BiLinkExternal } from 'react-icons/bi';
 
 export default function DetailsTable({ values }) {
     return (
@@ -20,10 +24,24 @@ export default function DetailsTable({ values }) {
                 </Thead>
                 <Tbody>
                     {
-                        values.map(({ title, value }, i) => (
+                        values.map(({ title, value, isLink }, i) => (
                             <Tr key={i}>
-                                <Td>{title}</Td>
-                                <Td>{value}</Td>
+                                {
+                                    isLink ?
+                                        (
+                                            <Td colSpan={2}>
+                                                <Link href={value} isExternal color="blue.400">
+                                                    {title} <ExternalLinkIcon mx="2px" />
+                                                </Link>
+                                            </Td>
+                                        ) :
+                                        (
+                                            <>
+                                                <Td>{title}</Td>
+                                                <Td> {value}</Td>
+                                            </>
+                                        )
+                                }
                             </Tr>
                         ))
                     }
@@ -38,10 +56,27 @@ export default function DetailsTable({ values }) {
                 </Thead>
                 <Tbody>
                     {
-                        values.map(({ title, value }, i) => (
+                        values.map(({ title, value, isLink }, i) => (
                             <Tr key={i}>
                                 <Td>{title}</Td>
-                                <Td>{value}</Td>
+                                <Td>
+                                    {
+                                        !isLink ?
+                                            value :
+                                            (
+                                                <Button
+                                                    colorScheme="blue"
+                                                    variant="solid"
+                                                    rightIcon={<BiLinkExternal />}
+                                                    size="sm"
+                                                    onClick={() => window.open(value, "__blank")}
+                                                >
+                                                    View
+                                                </Button>
+                                            )
+
+                                    }
+                                </Td>
                             </Tr>
                         ))
                     }

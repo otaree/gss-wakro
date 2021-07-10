@@ -18,6 +18,8 @@ import Bulletins from './pages/Bulletins';
 import TCIssued from './pages/TCIssued';
 import theme from './theme';
 
+console.log(process.env)
+
 export default function App() {
     return (
         <ChakraProvider theme={theme}>

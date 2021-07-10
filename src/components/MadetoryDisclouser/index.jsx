@@ -163,7 +163,8 @@ const schoolInfrastructureDetails = [
     },
     {
         title: "Link of Youtube video of the inspection of the school covering the infrastructure of the school",
-        value: "_"
+        value: "https://www.youtube.com/watch?v=WQJHarivto4&feature=youtu.be&ab_channel=Siram",
+        isLink: true
     }
 ];
 
@@ -348,7 +349,7 @@ export default function MandatoryPublicDisclosure() {
             <Heading fontSize={["lg", "2xl"]}>
                 D. Staff(Teaching)
             </Heading>
-            <DetailsTable 
+            <DetailsTable
                 values={staffDetails}
             />
             <Heading fontSize={["lg", "2xl"]}>

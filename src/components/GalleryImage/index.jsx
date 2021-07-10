@@ -8,6 +8,7 @@ import {
     ModalBody,
     ModalCloseButton,
     Text,
+    Center,
     useDisclosure
 } from "@chakra-ui/react";
 
@@ -27,6 +28,7 @@ export default function GalleryImage({ image, title }) {
                     transform: "scale(1.025)"
                 }}
                 onClick={onOpen}
+
             >
                 <Image
                     w={380}
@@ -34,7 +36,9 @@ export default function GalleryImage({ image, title }) {
                     objectFit="cover"
                     src={image}
                 />
-                <Text fontSize="md" fontWeight="semibold" textAlign="center" my={1}>{title}</Text>
+                <Center>
+                    <Text maxW={["70vw", "24vw"]} isTruncated fontSize="md" fontWeight="semibold" textAlign="center" my={1}>{title}</Text>
+                </Center>
             </Box>
 
             <Modal isOpen={isOpen} onClose={onClose} size={["4xl", "full"]}>
