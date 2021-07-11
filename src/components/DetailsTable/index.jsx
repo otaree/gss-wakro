@@ -70,7 +70,6 @@ export default function DetailsTable({ values }) {
                                                     View
                                                 </Button>
                                             )
-
                                     }
                                 </Td>
                             </Tr>
