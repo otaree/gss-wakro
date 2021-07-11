@@ -29,7 +29,7 @@ export default function LinksTable({
                     </Thead>
                     <Tbody>
                         {
-                            links.map(({ title, link }, i) => (
+                            links.map(({ title, value: link }, i) => (
                                 <Tr key={i}>
                                     <Td>{title}</Td>
                                     <Td>

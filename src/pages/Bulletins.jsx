@@ -53,46 +53,53 @@ export default function Bulletins() {
         <Flex justifyContent="center" py={4}>
             <Box width={["86%", "70%"]} >
                 <Heading mt={2} mb={4} size="lg" color="blue.500" textAlign="center" textDecor="underline" fontFamily="heading">Bulletins</Heading>
-                <Box bgColor="white" borderRadius="md" shadow="md" p={4} mb={8} minH={16} pos="relative" overflow="hidden">
+                <Box pos="relative" mb={8} minH={16}>
                     {
-                        bulletins.map((bulletin, i) => (
-                            <Fragment key={bulletin._id}>
+                        bulletins.length > 0 &&
+                        (
+                            <Box bgColor="white" borderRadius="md" shadow="md" p={4} overflow="hidden">
                                 {
-                                    i > 0 &&
-                                    (
-                                        <Divider my={4} />
-                                    )
+                                    bulletins.map((bulletin, i) => (
+                                        <Fragment key={bulletin._id}>
+                                            {
+                                                i > 0 &&
+                                                (
+                                                    <Divider my={4} />
+                                                )
+                                            }
+                                            <Heading fontSize="2xl">{bulletin.title}</Heading>
+                                            <Text fontFamily="body" mt={2}>{bulletin.body}</Text>
+                                            {
+                                                Array.isArray(bulletin.attachments) &&
+                                                bulletin.attachments.length > 0 &&
+                                                (
+                                                    <Button
+                                                        rightIcon={<Icon as={FaFileDownload} />}
+                                                        colorScheme="blue"
+                                                        variant="outline"
+                                                        size="sm"
+                                                        onClick={() => window.open(bulletin.attachments[0].link, "__blank")}
+                                                        my={4}
+                                                    >
+                                                        Download
+                                                    </Button>
+                                                )
+                                            }
+                                            <Text
+                                                fontFamily="cursive"
+                                                fontSize={["xs", "sm"]}
+                                                fontWeight="medium"
+                                                color="gray.500"
+                                                textAlign="right"
+                                                mt={2}
+                                            >
+                                                Created on: {localFormattedDate(new Date(bulletin.createdDate))}
+                                            </Text>
+                                        </Fragment>
+                                    ))
                                 }
-                                <Heading fontSize="2xl">{bulletin.title}</Heading>
-                                <Text fontFamily="body" mt={2}>{bulletin.body}</Text>
-                                {
-                                    Array.isArray(bulletin.attachments) &&
-                                    bulletin.attachments.length > 0 &&
-                                    (
-                                        <Button
-                                            rightIcon={<Icon as={FaFileDownload} />}
-                                            colorScheme="blue"
-                                            variant="outline"
-                                            size="sm"
-                                            onClick={() => window.open(bulletin.attachments[0].link, "__blank")}
-                                            my={4}
-                                        >
-                                            Download
-                                        </Button>
-                                    )
-                                }
-                                <Text
-                                    fontFamily="cursive"
-                                    fontSize={["xs", "sm"]}
-                                    fontWeight="medium"
-                                    color="gray.500"
-                                    textAlign="right"
-                                    mt={2}
-                                >
-                                    Created on: {localFormattedDate(new Date(bulletin.createdDate))}
-                                </Text>
-                            </Fragment>
-                        ))
+                            </Box>
+                        )
                     }
                     {
                         isLoading &&
