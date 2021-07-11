@@ -26,22 +26,18 @@ export default function DetailsTable({ values }) {
                     {
                         values.map(({ title, value, isLink }, i) => (
                             <Tr key={i}>
-                                {
-                                    isLink ?
-                                        (
-                                            <Td colSpan={2}>
+                                <Td>{title}</Td>
+                                <Td>
+                                    {
+                                        isLink ?
+                                            (
                                                 <Link href={value} isExternal color="blue.400">
-                                                    {title} <ExternalLinkIcon mx="2px" />
+                                                    Link <ExternalLinkIcon mx="2px" />
                                                 </Link>
-                                            </Td>
-                                        ) :
-                                        (
-                                            <>
-                                                <Td>{title}</Td>
-                                                <Td> {value}</Td>
-                                            </>
-                                        )
-                                }
+                                            ) :
+                                            value
+                                    }
+                                </Td>
                             </Tr>
                         ))
                     }
