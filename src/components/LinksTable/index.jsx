@@ -54,7 +54,7 @@ export default function LinksTable({
                     {title}
                 </Text>
                 {
-                    links.map(({ title, link }, i) => {
+                    links.map(({ title, value: link }, i) => {
                         const isLast = (links.length - 1) === i;
                         return (
                             <Text key={i} p={2} fontSize="md" borderBottomWidth={isLast ? 0 : 0.75} borderBottomColor="gray.200">
