@@ -14,7 +14,7 @@ export default function PrincipleMessage() {
 
     return (
         <>
-            <Box p={[8, 16]} bgColor="blue.50">
+            <Box p={[2, 16]} bgColor="blue.50">
                 <Flex flexDirection={["column", "row"]} width="100%">
                     <Box>
                         <Box display={["block", "none"]}>
